@@ -159,19 +159,19 @@ export default function CourseCatalog({ onEnrollSuccess }) {
     <div className="space-y-6 animate-fadeIn pb-12">
       
       {/* Header */}
-      <div className="glass-card rounded-3xl p-6 border border-slate-800 shadow-2xl relative overflow-hidden">
+      <div className="glass-card rounded-3xl p-6 border border-slate-200 shadow-2xl relative overflow-hidden">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center space-x-3.5">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-cyan-500 via-indigo-600 to-amber-500 p-0.5 shadow-xl flex items-center justify-center">
-              <div className="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center text-cyan-400">
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-primary via-secondary to-tertiary p-0.5 shadow-xl flex items-center justify-center">
+              <div className="w-full h-full bg-white rounded-[14px] flex items-center justify-center text-secondary">
                 <BookOpen className="w-7 h-7" />
               </div>
             </div>
             <div>
-              <h2 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+              <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
                 iGOT Karmayogi & NSSTA / TPAC Training Repository
               </h2>
-              <p className="text-xs text-slate-300 mt-1">
+              <p className="text-xs text-slate-600 mt-1">
                 Official MoSPI capacity building catalog offering online micro-credentials and executive residential fellowships
               </p>
             </div>
@@ -179,7 +179,7 @@ export default function CourseCatalog({ onEnrollSuccess }) {
         </div>
 
         {/* Filter & Search Bar */}
-        <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 mt-6 pt-6 border-t border-slate-800 text-xs">
+        <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 mt-6 pt-6 border-t border-slate-200 text-xs">
           
           <div className="sm:col-span-6 relative">
             <Search className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
@@ -188,7 +188,7 @@ export default function CourseCatalog({ onEnrollSuccess }) {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search courses by keyword, methodology, or skill..."
-              className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-9 pr-4 py-2.5 text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
+              className="w-full bg-white border border-slate-200 rounded-xl pl-9 pr-4 py-2.5 text-slate-700 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-secondary/40"
             />
           </div>
 
@@ -196,7 +196,7 @@ export default function CourseCatalog({ onEnrollSuccess }) {
             <select
               value={selectedSource}
               onChange={(e) => setSelectedSource(e.target.value)}
-              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 cursor-pointer"
+              className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-slate-700 focus:outline-none focus:ring-2 focus:ring-secondary/40 cursor-pointer"
             >
               <option value="All">All Ingestion Sources</option>
               <option value="iGOT">iGOT Karmayogi (Online)</option>
@@ -208,7 +208,7 @@ export default function CourseCatalog({ onEnrollSuccess }) {
             <select
               value={selectedDomain}
               onChange={(e) => setSelectedDomain(e.target.value)}
-              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 cursor-pointer"
+              className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-slate-700 focus:outline-none focus:ring-2 focus:ring-secondary/40 cursor-pointer"
             >
               <option value="All">All MoSPI Domains</option>
               <option value="National Accounts">National Accounts</option>
@@ -234,25 +234,25 @@ export default function CourseCatalog({ onEnrollSuccess }) {
               key={idx}
               className={`glass-card rounded-2xl p-5 border flex flex-col justify-between space-y-4 transition-all duration-200 ${
                 isTPAC
-                  ? 'border-indigo-800/40 bg-gradient-to-br from-slate-900 to-indigo-950/30 hover:border-indigo-500/50'
-                  : 'border-slate-800 hover:border-cyan-500/50'
+                  ? 'border-primary/20 bg-gradient-to-br from-white to-primary/10 hover:border-primary/40'
+                  : 'border-slate-200 hover:border-secondary/40'
               }`}
             >
               <div className="space-y-2.5">
                 <div className="flex items-center justify-between">
                   <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider ${
                     isTPAC 
-                      ? 'bg-indigo-500/20 text-indigo-300 border border-indigo-500/40' 
-                      : 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/40'
+                      ? 'bg-primary/10 text-primary border border-primary/30' 
+                      : 'bg-secondary/15 text-secondary border border-secondary/30'
                   }`}>
                     {item.source}
                   </span>
-                  <span className="text-[11px] text-amber-400 font-mono font-semibold">
+                  <span className="text-[11px] text-tertiary font-mono font-semibold">
                     {item.level}
                   </span>
                 </div>
 
-                <h4 className="font-bold text-sm text-white line-clamp-2">
+                <h4 className="font-bold text-sm text-slate-900 line-clamp-2">
                   {item.title}
                 </h4>
 
@@ -262,14 +262,14 @@ export default function CourseCatalog({ onEnrollSuccess }) {
 
                 <div className="flex flex-wrap gap-1 pt-1">
                   {item.skills?.map((sk, sidx) => (
-                    <span key={sidx} className="text-[10px] px-2 py-0.5 rounded bg-slate-950 text-slate-300 border border-slate-800">
+                    <span key={sidx} className="text-[10px] px-2 py-0.5 rounded bg-white text-slate-600 border border-slate-200">
                       ✓ {sk}
                     </span>
                   ))}
                 </div>
               </div>
 
-              <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-xs">
+              <div className="pt-3 border-t border-slate-200 flex items-center justify-between text-xs">
                 <div className="text-[11px] text-slate-400 space-y-0.5">
                   <p className="flex items-center gap-1">
                     <Clock className="w-3 h-3 text-slate-500" /> {item.duration}
@@ -284,15 +284,15 @@ export default function CourseCatalog({ onEnrollSuccess }) {
                   disabled={isEnrolled}
                   className={`px-3 py-1.5 rounded-xl font-bold text-xs transition-all flex items-center gap-1.5 ${
                     isEnrolled
-                      ? 'bg-emerald-600/30 text-emerald-300 border border-emerald-500/40 cursor-default'
+                      ? 'bg-emerald-600/30 text-emerald-700 border border-emerald-500/40 cursor-default'
                       : isTPAC
-                      ? 'bg-indigo-600 hover:bg-indigo-500 text-white'
-                      : 'bg-cyan-600 hover:bg-cyan-500 text-white'
+                      ? 'bg-primary hover:bg-primary-dark text-white'
+                      : 'bg-secondary hover:bg-primary-dark text-white'
                   }`}
                 >
                   {isEnrolled ? (
                     <>
-                      <Check className="w-3.5 h-3.5 text-emerald-300" />
+                      <Check className="w-3.5 h-3.5 text-emerald-700" />
                       {isTPAC ? 'Nominated' : 'Enrolled'}
                     </>
                   ) : (

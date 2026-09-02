@@ -43,25 +43,25 @@ export default function CompetencyHeatmap({ heatmapData }) {
 
   const getStatusColor = (status, prof) => {
     if (status === 'Strong' || prof >= 4.0) {
-      return 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40 hover:bg-emerald-500/30';
+      return 'bg-emerald-500/20 text-emerald-700 border-emerald-500/40 hover:bg-emerald-500/30';
     }
     if (status === 'Moderate' || prof >= 3.0) {
-      return 'bg-amber-500/20 text-amber-300 border-amber-500/40 hover:bg-amber-500/30';
+      return 'bg-tertiary/15 text-tertiary border-primary/30 hover:bg-primary/30';
     }
-    return 'bg-rose-500/20 text-rose-300 border-rose-500/40 hover:bg-rose-500/30';
+    return 'bg-rose-500/20 text-rose-700 border-rose-500/40 hover:bg-rose-500/30';
   };
 
   return (
-    <div className="glass-card rounded-2xl p-6 border border-slate-800 shadow-2xl space-y-6">
+    <div className="glass-card rounded-2xl p-6 border border-slate-200 shadow-2xl space-y-6">
       
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-800 gap-3">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-200 gap-3">
         <div>
           <div className="flex items-center space-x-2">
-            <span className="p-1.5 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20">
+            <span className="p-1.5 rounded-lg bg-tertiary/10 text-tertiary border border-tertiary/20">
               <ShieldCheck className="w-4 h-4" />
             </span>
-            <h3 className="font-bold text-base text-white">
+            <h3 className="font-bold text-base text-slate-900">
               Organization-Wide Competency Heatmap Matrix
             </h3>
           </div>
@@ -72,35 +72,35 @@ export default function CompetencyHeatmap({ heatmapData }) {
 
         {/* Filter Controls */}
         <div className="flex items-center space-x-3 text-xs">
-          <div className="flex items-center space-x-2 bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-800">
+          <div className="flex items-center space-x-2 bg-white px-3 py-1.5 rounded-xl border border-slate-200">
             <Filter className="w-3.5 h-3.5 text-slate-400" />
             <select
               value={selectedDomainFilter}
               onChange={(e) => setSelectedDomainFilter(e.target.value)}
-              className="bg-transparent text-slate-200 focus:outline-none cursor-pointer text-xs"
+              className="bg-transparent text-slate-700 focus:outline-none cursor-pointer text-xs"
             >
-              <option value="All" className="bg-slate-900">All MoSPI Domains</option>
+              <option value="All" className="bg-white">All MoSPI Domains</option>
               {domains.map((dom, didx) => (
-                <option key={didx} value={dom} className="bg-slate-900">{dom}</option>
+                <option key={didx} value={dom} className="bg-white">{dom}</option>
               ))}
             </select>
           </div>
 
-          <div className="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 font-mono text-cyan-400 font-bold">
+          <div className="px-3 py-1.5 rounded-xl bg-white border border-slate-200 font-mono text-secondary font-bold">
             Org Readiness: {heatmapData.org_readiness_avg}%
           </div>
         </div>
       </div>
 
       {/* Legend Bar */}
-      <div className="flex flex-wrap items-center justify-between text-xs text-slate-400 px-2 py-1 bg-slate-900/60 rounded-xl border border-slate-800/80 gap-2">
-        <span className="font-medium text-slate-300">Competency Level Legend:</span>
+      <div className="flex flex-wrap items-center justify-between text-xs text-slate-400 px-2 py-1 bg-slate-50 rounded-xl border border-slate-200 gap-2">
+        <span className="font-medium text-slate-600">Competency Level Legend:</span>
         <div className="flex items-center space-x-4 text-[11px]">
           <span className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded bg-emerald-500"></span> Strong (Proficiency ≥ 4.0)
           </span>
           <span className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded bg-amber-500"></span> Moderate Gap (3.0 - 3.9)
+            <span className="w-2.5 h-2.5 rounded bg-primary"></span> Moderate Gap (3.0 - 3.9)
           </span>
           <span className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded bg-rose-500"></span> Severe Shortage (&lt; 3.0)
@@ -109,24 +109,24 @@ export default function CompetencyHeatmap({ heatmapData }) {
       </div>
 
       {/* Matrix Table */}
-      <div className="overflow-x-auto rounded-xl border border-slate-800">
+      <div className="overflow-x-auto rounded-xl border border-slate-200">
         <table className="w-full text-left border-collapse text-xs">
           <thead>
-            <tr className="bg-slate-900/90 border-b border-slate-800">
-              <th className="p-3 font-bold text-slate-300 sticky left-0 bg-slate-900 z-10 min-w-[200px]">
+            <tr className="bg-white border-b border-slate-200">
+              <th className="p-3 font-bold text-slate-600 sticky left-0 bg-white z-10 min-w-[200px]">
                 Division / Department
               </th>
               {filteredDomains.map((dom, didx) => (
-                <th key={didx} className="p-3 font-bold text-slate-300 text-center min-w-[130px]">
+                <th key={didx} className="p-3 font-bold text-slate-600 text-center min-w-[130px]">
                   {dom}
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-800/60">
+          <tbody className="divide-y divide-slate-200">
             {departments.map((dept, deidx) => (
-              <tr key={deidx} className="hover:bg-slate-900/40 transition-colors">
-                <td className="p-3 font-semibold text-slate-200 sticky left-0 bg-slate-950/90 z-10 border-r border-slate-800/60">
+              <tr key={deidx} className="hover:bg-slate-50 transition-colors">
+                <td className="p-3 font-semibold text-slate-700 sticky left-0 bg-white z-10 border-r border-slate-200">
                   {dept}
                 </td>
                 {filteredDomains.map((dom, doidx) => {
@@ -153,48 +153,48 @@ export default function CompetencyHeatmap({ heatmapData }) {
 
       {/* Cell Drilldown Modal / Drawer */}
       {selectedCell && (
-        <div className="p-4 rounded-xl bg-slate-900 border border-slate-700 shadow-xl space-y-3 animate-fadeIn">
+        <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-xl space-y-3 animate-fadeIn">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Info className="w-4 h-4 text-cyan-400" />
-              <h4 className="font-bold text-sm text-white">
+              <Info className="w-4 h-4 text-secondary" />
+              <h4 className="font-bold text-sm text-slate-900">
                 Matrix Cell Inspection: {selectedCell.department}
               </h4>
             </div>
             <button
               onClick={() => setSelectedCell(null)}
-              className="text-xs text-slate-400 hover:text-white px-2 py-1 rounded bg-slate-800"
+              className="text-xs text-slate-400 hover:text-primary px-2 py-1 rounded bg-slate-100"
             >
               Close
             </button>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 text-xs">
-            <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
+            <div className="p-2.5 rounded-lg bg-white border border-slate-200">
               <span className="text-slate-400 text-[11px]">Domain:</span>
-              <p className="font-bold text-slate-200 mt-0.5">{selectedCell.domain}</p>
+              <p className="font-bold text-slate-700 mt-0.5">{selectedCell.domain}</p>
             </div>
-            <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
+            <div className="p-2.5 rounded-lg bg-white border border-slate-200">
               <span className="text-slate-400 text-[11px]">Division Average:</span>
-              <p className="font-bold text-cyan-400 mt-0.5">{selectedCell.average_proficiency} / 5.0</p>
+              <p className="font-bold text-secondary mt-0.5">{selectedCell.average_proficiency} / 5.0</p>
             </div>
-            <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
+            <div className="p-2.5 rounded-lg bg-white border border-slate-200">
               <span className="text-slate-400 text-[11px]">Required Benchmark:</span>
-              <p className="font-bold text-amber-400 mt-0.5">{selectedCell.benchmark_proficiency} / 5.0</p>
+              <p className="font-bold text-tertiary mt-0.5">{selectedCell.benchmark_proficiency} / 5.0</p>
             </div>
-            <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
+            <div className="p-2.5 rounded-lg bg-white border border-slate-200">
               <span className="text-slate-400 text-[11px]">Active Officers:</span>
-              <p className="font-bold text-slate-200 mt-0.5">{selectedCell.officer_count} Statistical Personnel</p>
+              <p className="font-bold text-slate-700 mt-0.5">{selectedCell.officer_count} Statistical Personnel</p>
             </div>
           </div>
 
-          <div className="p-3 rounded-lg bg-indigo-950/30 border border-indigo-500/30 text-xs text-slate-300 flex items-center justify-between">
+          <div className="p-3 rounded-lg bg-primary/5 border border-primary/30 text-xs text-slate-600 flex items-center justify-between">
             <span>
               <strong>Training Intervention:</strong> Nominate division personnel for NSSTA cohort targeting {selectedCell.domain}.
             </span>
             <button 
               onClick={() => alert(`Nomination batch requested for ${selectedCell.department} in ${selectedCell.domain}`)}
-              className="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shrink-0 ml-2"
+              className="px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-dark text-white font-bold text-xs shrink-0 ml-2"
             >
               Batch Nominate to NSSTA
             </button>

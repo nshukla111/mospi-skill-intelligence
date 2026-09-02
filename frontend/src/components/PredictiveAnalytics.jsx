@@ -24,16 +24,16 @@ export default function PredictiveAnalytics({ predictiveData }) {
   }));
 
   return (
-    <div className="glass-card rounded-2xl p-6 border border-slate-800 shadow-2xl space-y-6">
+    <div className="glass-card rounded-2xl p-6 border border-slate-200 shadow-2xl space-y-6">
       
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-800 gap-3">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-200 gap-3">
         <div>
           <div className="flex items-center space-x-2">
-            <span className="p-1.5 rounded-lg bg-rose-500/10 text-rose-400 border border-rose-500/20">
+            <span className="p-1.5 rounded-lg bg-rose-500/10 text-rose-600 border border-rose-500/20">
               <TrendingUp className="w-4 h-4" />
             </span>
-            <h3 className="font-bold text-base text-white">
+            <h3 className="font-bold text-base text-slate-900">
               Strategic Predictive Skill-Shortage Forecasting (2026 - 2028)
             </h3>
           </div>
@@ -42,7 +42,7 @@ export default function PredictiveAnalytics({ predictiveData }) {
           </p>
         </div>
 
-        <span className="px-3 py-1 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">
+        <span className="px-3 py-1 rounded-xl bg-white border border-slate-200 text-slate-600 font-mono text-xs">
           Horizon: 2026 - 2028
         </span>
       </div>
@@ -52,31 +52,31 @@ export default function PredictiveAnalytics({ predictiveData }) {
         <div className="lg:col-span-7 h-72 w-full">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={chartData} margin={{ top: 10, right: 20, left: -20, bottom: 20 }}>
-              <XAxis dataKey="name" tick={{ fill: '#94a3b8', fontSize: 10 }} />
+              <XAxis dataKey="name" tick={{ fill: '#1F4E78', fontSize: 10 }} />
               <YAxis tick={{ fill: '#64748b', fontSize: 10 }} />
-              <Tooltip contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '8px', fontSize: '12px' }} />
+              <Tooltip contentStyle={{ backgroundColor: '#ffffff', borderColor: '#e2e8f0', borderRadius: '8px', fontSize: '12px', color: '#1E293B' }} />
               <Legend wrapperStyle={{ fontSize: '11px' }} />
-              <Bar dataKey="Current Capacity" fill="#06b6d4" radius={[4, 4, 0, 0]} />
-              <Bar dataKey="Projected 2027 Demand" fill="#f43f5e" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="Current Capacity" fill="#209CD8" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="Projected 2027 Demand" fill="#F2994A" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
 
         {/* Cadre Readiness Progress */}
-        <div className="lg:col-span-5 space-y-3.5 bg-slate-900/60 p-4 rounded-xl border border-slate-800">
-          <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
-            <Users className="w-3.5 h-3.5 text-cyan-400" />
+        <div className="lg:col-span-5 space-y-3.5 bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <h4 className="text-xs font-bold text-slate-600 uppercase tracking-wider flex items-center gap-1.5">
+            <Users className="w-3.5 h-3.5 text-secondary" />
             Cadre Capacity Distribution
           </h4>
           {cadreDist.map((c, cidx) => (
             <div key={cidx} className="space-y-1">
               <div className="flex items-center justify-between text-xs">
-                <span className="text-slate-300 font-medium">{c.cadre}</span>
-                <span className="font-mono text-cyan-400 font-bold">{c.readiness_pct}%</span>
+                <span className="text-slate-600 font-medium">{c.cadre}</span>
+                <span className="font-mono text-secondary font-bold">{c.readiness_pct}%</span>
               </div>
-              <div className="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+              <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
                 <div 
-                  className="bg-gradient-to-r from-cyan-500 to-indigo-500 h-full rounded-full"
+                  className="bg-gradient-to-r from-secondary to-primary h-full rounded-full"
                   style={{ width: `${c.readiness_pct}%` }}
                 ></div>
               </div>
@@ -91,27 +91,27 @@ export default function PredictiveAnalytics({ predictiveData }) {
         {shortages.map((item, idx) => (
           <div 
             key={idx}
-            className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 space-y-2"
+            className="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-200 space-y-2"
           >
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-white">{item.skill_name}</span>
+              <span className="text-xs font-bold text-slate-900">{item.skill_name}</span>
               <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${
                 item.urgency === 'Critical' 
-                  ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40' 
-                  : 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                  ? 'bg-rose-500/20 text-rose-700 border border-rose-500/40' 
+                  : 'bg-tertiary/15 text-tertiary border border-primary/30'
               }`}>
                 {item.urgency} ({item.shortage_gap_pct}% Deficit)
               </span>
             </div>
 
-            <p className="text-[11px] text-slate-300 leading-relaxed">
-              <strong className="text-cyan-400">Action Plan:</strong> {item.recommended_action}
+            <p className="text-[11px] text-slate-600 leading-relaxed">
+              <strong className="text-secondary">Action Plan:</strong> {item.recommended_action}
             </p>
 
             <div className="flex items-center space-x-4 text-[11px] text-slate-400 pt-1">
-              <span>Current Trained: <strong className="text-cyan-300">{item.current_capacity}</strong></span>
+              <span>Current Trained: <strong className="text-secondary">{item.current_capacity}</strong></span>
               <span>·</span>
-              <span>2027 Need: <strong className="text-rose-400">{item.projected_demand_2027}</strong></span>
+              <span>2027 Need: <strong className="text-rose-600">{item.projected_demand_2027}</strong></span>
             </div>
           </div>
         ))}

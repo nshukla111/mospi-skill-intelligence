@@ -23,6 +23,7 @@ import {
   TrendingUp
 } from 'lucide-react';
 import { fetchEmployeeGaps, fetchEmployeeRecommendations } from '../services/api';
+import BrandLogo from './BrandLogo';
 
 export default function LoginOnboarding({ 
   employees, 
@@ -249,33 +250,30 @@ export default function LoginOnboarding({
   };
 
   return (
-    <div className="min-h-screen bg-[#060d17] text-slate-100 flex flex-col justify-between selection:bg-amber-500/30">
+    <div className="min-h-screen bg-neutral text-slate-800 flex flex-col justify-between selection:bg-secondary/20">
       
       {/* Indian Government Tricolor Top Ribbon */}
       <div className="tricolor-stripe"></div>
 
       {/* Top Gov Branding Header */}
-      <header className="border-b border-slate-800/80 bg-slate-950/90 py-3 px-4 sm:px-8">
+      <header className="border-b border-slate-200 bg-white py-3 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            {/* National Emblem Emblem Icon */}
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-b from-amber-500/20 to-amber-700/20 border border-amber-500/40 p-1 flex items-center justify-center shadow-lg">
-              <ShieldCheck className="w-6 h-6 text-amber-400" />
-            </div>
+            <BrandLogo size="md" />
             <div>
-              <div className="flex items-center space-x-2 text-xs font-bold text-slate-300">
-                <span className="text-amber-400">भारत सरकार</span>
+              <div className="flex items-center space-x-2 text-xs font-bold text-slate-600">
+                <span className="text-tertiary">भारत सरकार</span>
                 <span>|</span>
                 <span>Government of India</span>
               </div>
-              <h1 className="text-sm sm:text-base font-extrabold text-white tracking-tight">
+              <h1 className="text-sm sm:text-base font-extrabold text-primary tracking-tight">
                 सांख्यिकी एवं कार्यक्रम कार्यान्वयन मंत्रालय (MoSPI)
               </h1>
             </div>
           </div>
 
           <div className="text-right hidden sm:block">
-            <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-950/80 text-blue-300 border border-blue-800/50">
+            <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">
               SIH 2026 · Problem Statement 26101
             </span>
             <p className="text-[10px] text-slate-400 mt-0.5">Civil Services Competency Intelligence System</p>
@@ -290,14 +288,14 @@ export default function LoginOnboarding({
         {/* STEP 1: LANDING & OFFICIAL LOGIN / SSO                   */}
         {/* ======================================================== */}
         {step === 'landing' && (
-          <div className="glass-card rounded-3xl p-6 sm:p-10 border border-slate-700/80 shadow-2xl space-y-8 animate-fadeIn relative overflow-hidden">
+          <div className="glass-card rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-2xl space-y-8 animate-fadeIn relative overflow-hidden">
             
             <div className="text-center space-y-2 max-w-xl mx-auto">
-              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-tertiary/10 border border-tertiary/30 text-tertiary text-xs font-bold uppercase tracking-wider">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>AI-Powered Official Statistical Cadre Portal</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                 Official Sign-In & Competency Diagnostic
               </h2>
               <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
@@ -309,7 +307,7 @@ export default function LoginOnboarding({
             <div className="space-y-3">
               <div className="flex items-center justify-between text-xs text-slate-400 font-semibold px-1">
                 <span>Select Existing Official Profile:</span>
-                <span className="text-amber-400 font-mono">1-Click SSO Authentication</span>
+                <span className="text-tertiary font-mono">1-Click SSO Authentication</span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -318,19 +316,19 @@ export default function LoginOnboarding({
                     key={emp.id}
                     onClick={() => handleQuickLogin(emp)}
                     disabled={loadingReport}
-                    className="p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-800/90 border border-slate-800 hover:border-amber-500/50 text-left transition-all group flex items-start space-x-3.5"
+                    className="p-4 rounded-2xl bg-slate-50 hover:bg-slate-50 border border-slate-200 hover:border-primary/40 text-left transition-all group flex items-start space-x-3.5"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-900 to-indigo-900 border border-blue-700/50 flex items-center justify-center font-bold text-amber-400 shrink-0 text-sm group-hover:scale-105 transition-transform">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-primary-dark border border-primary/20 flex items-center justify-center font-bold text-tertiary shrink-0 text-sm group-hover:scale-105 transition-transform">
                       {emp.name.split(' ')[0][0]}
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between">
-                        <p className="font-bold text-xs text-white truncate">{emp.name}</p>
-                        <span className="text-[9px] px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 font-mono">
+                        <p className="font-bold text-xs text-slate-900 truncate">{emp.name}</p>
+                        <span className="text-[9px] px-1.5 py-0.5 rounded bg-secondary/15 text-primary font-mono">
                           {emp.cadre.split(' ')[0]}
                         </span>
                       </div>
-                      <p className="text-[11px] text-amber-400/90 font-medium truncate mt-0.5">{emp.designation}</p>
+                      <p className="text-[11px] text-tertiary font-medium truncate mt-0.5">{emp.designation}</p>
                       <p className="text-[10px] text-slate-400 truncate">{emp.department}</p>
                     </div>
                   </button>
@@ -340,8 +338,8 @@ export default function LoginOnboarding({
 
             {/* Divider */}
             <div className="relative flex items-center justify-center">
-              <div className="border-t border-slate-800 w-full"></div>
-              <span className="bg-[#0b192c] px-3 text-xs text-slate-500 uppercase font-semibold">
+              <div className="border-t border-slate-200 w-full"></div>
+              <span className="bg-white px-3 text-xs text-slate-500 uppercase font-semibold">
                 Or Onboard as New Official
               </span>
             </div>
@@ -350,7 +348,7 @@ export default function LoginOnboarding({
             <div className="text-center">
               <button
                 onClick={() => setStep('questions')}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 via-orange-500 to-indigo-600 text-white font-extrabold text-sm hover:brightness-110 shadow-xl shadow-amber-500/20 flex items-center justify-center space-x-2.5 mx-auto transition-all transform hover:scale-[1.02]"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-2xl btn-primary text-white font-extrabold text-sm hover:brightness-110 shadow-xl shadow-primary/20 flex items-center justify-center space-x-2.5 mx-auto transition-all transform hover:scale-[1.02]"
               >
                 <span>Start Official Diagnostic Questionnaire</span>
                 <ArrowRight className="w-4 h-4" />
@@ -367,15 +365,15 @@ export default function LoginOnboarding({
         {/* STEP 2: SMART ONBOARDING QUESTIONNAIRE                   */}
         {/* ======================================================== */}
         {step === 'questions' && (
-          <div className="glass-card rounded-3xl p-6 sm:p-8 border border-slate-700/80 shadow-2xl space-y-6 animate-fadeIn">
+          <div className="glass-card rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-2xl space-y-6 animate-fadeIn">
             
             {/* Stepper Header */}
-            <div className="flex items-center justify-between pb-4 border-b border-slate-800">
+            <div className="flex items-center justify-between pb-4 border-b border-slate-200">
               <div>
-                <span className="text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider">
+                <span className="text-[10px] font-mono text-tertiary font-bold uppercase tracking-wider">
                   Questionnaire Step {questionSubStep} of 4
                 </span>
-                <h3 className="text-lg font-extrabold text-white mt-0.5">
+                <h3 className="text-lg font-extrabold text-slate-900 mt-0.5">
                   {questionSubStep === 1 && 'Official Posting & Cadre Information'}
                   {questionSubStep === 2 && 'Experience & Academic Background'}
                   {questionSubStep === 3 && 'In-Service Trainings & Certifications'}
@@ -389,7 +387,7 @@ export default function LoginOnboarding({
                   <div 
                     key={s} 
                     className={`w-7 h-2 rounded-full transition-all ${
-                      s <= questionSubStep ? 'bg-amber-400' : 'bg-slate-800'
+                      s <= questionSubStep ? 'bg-tertiary' : 'bg-slate-100'
                     }`}
                   ></div>
                 ))}
@@ -400,22 +398,22 @@ export default function LoginOnboarding({
             {questionSubStep === 1 && (
               <div className="space-y-4 text-xs">
                 <div className="space-y-1">
-                  <label className="text-slate-300 font-semibold">Full Official Name</label>
+                  <label className="text-slate-600 font-semibold">Full Official Name</label>
                   <input
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full p-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 focus:ring-2 focus:ring-amber-500/50 focus:outline-none"
+                    className="w-full p-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:ring-2 focus:ring-secondary/40 focus:outline-none"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="space-y-1">
-                    <label className="text-slate-300 font-semibold">Official Designation</label>
+                    <label className="text-slate-600 font-semibold">Official Designation</label>
                     <select
                       value={formData.designation}
                       onChange={(e) => setFormData({ ...formData, designation: e.target.value })}
-                      className="w-full p-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 focus:ring-2 focus:ring-amber-500/50 focus:outline-none cursor-pointer"
+                      className="w-full p-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:ring-2 focus:ring-secondary/40 focus:outline-none cursor-pointer"
                     >
                       <option value="Director">Director</option>
                       <option value="Joint Director">Joint Director</option>
@@ -427,11 +425,11 @@ export default function LoginOnboarding({
                   </div>
 
                   <div className="space-y-1">
-                    <label className="text-slate-300 font-semibold">Cadre Service</label>
+                    <label className="text-slate-600 font-semibold">Cadre Service</label>
                     <select
                       value={formData.cadre}
                       onChange={(e) => setFormData({ ...formData, cadre: e.target.value })}
-                      className="w-full p-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 focus:ring-2 focus:ring-amber-500/50 focus:outline-none cursor-pointer"
+                      className="w-full p-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:ring-2 focus:ring-secondary/40 focus:outline-none cursor-pointer"
                     >
                       <option value="Indian Statistical Service (HAG/SAG/JAG)">Indian Statistical Service (ISS - Senior)</option>
                       <option value="Indian Statistical Service (STS/JTS)">Indian Statistical Service (ISS - Junior)</option>
@@ -441,11 +439,11 @@ export default function LoginOnboarding({
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-slate-300 font-semibold">Division / Field of Work</label>
+                  <label className="text-slate-600 font-semibold">Division / Field of Work</label>
                   <select
                     value={formData.department}
                     onChange={(e) => setFormData({ ...formData, department: e.target.value })}
-                    className="w-full p-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 focus:ring-2 focus:ring-amber-500/50 focus:outline-none cursor-pointer"
+                    className="w-full p-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:ring-2 focus:ring-secondary/40 focus:outline-none cursor-pointer"
                   >
                     <option value="National Accounts Division (NAD)">National Accounts Division (NAD) - GDP & GVA</option>
                     <option value="Field Operations Division (FOD)">Field Operations Division (FOD) - NSS/PLFS Surveys</option>
@@ -457,13 +455,13 @@ export default function LoginOnboarding({
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-slate-300 font-semibold">Posting Location</label>
+                  <label className="text-slate-600 font-semibold">Posting Location</label>
                   <input
                     type="text"
                     value={formData.location}
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                     placeholder="e.g. Sardar Patel Bhawan, New Delhi or Regional Office Kolkata"
-                    className="w-full p-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 focus:ring-2 focus:ring-amber-500/50 focus:outline-none"
+                    className="w-full p-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:ring-2 focus:ring-secondary/40 focus:outline-none"
                   />
                 </div>
               </div>
@@ -474,8 +472,8 @@ export default function LoginOnboarding({
               <div className="space-y-4 text-xs">
                 <div className="space-y-1">
                   <div className="flex items-center justify-between">
-                    <label className="text-slate-300 font-semibold">Total Experience in Civil Services / Statistics</label>
-                    <span className="font-mono text-amber-400 font-bold text-sm">{formData.experience_years} Years</span>
+                    <label className="text-slate-600 font-semibold">Total Experience in Civil Services / Statistics</label>
+                    <span className="font-mono text-tertiary font-bold text-sm">{formData.experience_years} Years</span>
                   </div>
                   <input
                     type="range"
@@ -483,7 +481,7 @@ export default function LoginOnboarding({
                     max="35"
                     value={formData.experience_years}
                     onChange={(e) => setFormData({ ...formData, experience_years: Number(e.target.value) })}
-                    className="w-full accent-amber-500 cursor-pointer"
+                    className="w-full accent-primary cursor-pointer"
                   />
                   <div className="flex justify-between text-[10px] text-slate-500">
                     <span>1 Year (Induction)</span>
@@ -493,23 +491,23 @@ export default function LoginOnboarding({
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-slate-300 font-semibold">Highest Educational Qualification</label>
+                  <label className="text-slate-600 font-semibold">Highest Educational Qualification</label>
                   <input
                     type="text"
                     value={formData.qualifications}
                     onChange={(e) => setFormData({ ...formData, qualifications: e.target.value })}
                     placeholder="e.g. M.Stat (Indian Statistical Institute) or Ph.D. in Econometrics"
-                    className="w-full p-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 focus:ring-2 focus:ring-amber-500/50 focus:outline-none"
+                    className="w-full p-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:ring-2 focus:ring-secondary/40 focus:outline-none"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-slate-300 font-semibold">Official NIC Email ID</label>
+                  <label className="text-slate-600 font-semibold">Official NIC Email ID</label>
                   <input
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full p-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 focus:ring-2 focus:ring-amber-500/50 focus:outline-none"
+                    className="w-full p-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:ring-2 focus:ring-secondary/40 focus:outline-none"
                   />
                 </div>
               </div>
@@ -518,7 +516,7 @@ export default function LoginOnboarding({
             {/* Sub-step 3: Past In-Service Trainings */}
             {questionSubStep === 3 && (
               <div className="space-y-3 text-xs">
-                <p className="text-slate-300 font-semibold">
+                <p className="text-slate-600 font-semibold">
                   Select past in-service trainings and workshops attended (NSSTA, iGOT, IMF-STI, UNESCAP):
                 </p>
                 
@@ -532,12 +530,12 @@ export default function LoginOnboarding({
                         onClick={() => toggleTraining(t)}
                         className={`p-3 rounded-xl border text-left text-xs font-medium transition-all flex items-start space-x-2 ${
                           selected
-                            ? 'bg-amber-950/40 border-amber-500/80 text-white'
-                            : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:border-slate-700'
+                            ? 'bg-tertiary/15 border-tertiary/60 text-slate-900'
+                            : 'bg-slate-50 border-slate-200 text-slate-400 hover:border-slate-200'
                         }`}
                       >
                         <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center text-[10px] shrink-0 ${
-                          selected ? 'bg-amber-500 text-slate-950 font-bold' : 'border border-slate-700'
+                          selected ? 'bg-primary text-white font-bold' : 'border border-slate-200'
                         }`}>
                           {selected && '✓'}
                         </div>
@@ -552,7 +550,7 @@ export default function LoginOnboarding({
             {/* Sub-step 4: Self-Assessed Proficiency */}
             {questionSubStep === 4 && (
               <div className="space-y-3 text-xs">
-                <p className="text-slate-300 font-semibold">
+                <p className="text-slate-600 font-semibold">
                   Rate your current self-assessed proficiency across core domains (Level 1: Beginner to Level 5: Expert):
                 </p>
 
@@ -569,9 +567,9 @@ export default function LoginOnboarding({
                   ].map((sk) => {
                     const currentLvl = formData.self_reported_skills[sk.id] || 2;
                     return (
-                      <div key={sk.id} className="p-3 rounded-xl bg-slate-950/70 border border-slate-800 flex items-center justify-between">
+                      <div key={sk.id} className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
                         <div>
-                          <p className="font-bold text-slate-200">{sk.name}</p>
+                          <p className="font-bold text-slate-700">{sk.name}</p>
                           <span className="text-[10px] text-slate-400">{sk.domain}</span>
                         </div>
 
@@ -584,8 +582,8 @@ export default function LoginOnboarding({
                               onClick={() => setSkillLevel(sk.id, lvl)}
                               className={`w-7 h-7 rounded-lg text-xs font-mono font-bold transition-all ${
                                 currentLvl === lvl
-                                  ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20 scale-105'
-                                  : 'bg-slate-900 text-slate-400 border border-slate-800 hover:border-slate-700'
+                                  ? 'bg-primary text-white shadow-md shadow-primary/20 scale-105'
+                                  : 'bg-white text-slate-400 border border-slate-200 hover:border-slate-200'
                               }`}
                             >
                               {lvl}
@@ -600,12 +598,12 @@ export default function LoginOnboarding({
             )}
 
             {/* Stepper Navigation Buttons */}
-            <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+            <div className="pt-4 border-t border-slate-200 flex items-center justify-between text-xs">
               {questionSubStep > 1 ? (
                 <button
                   type="button"
                   onClick={() => setQuestionSubStep(prev => prev - 1)}
-                  className="px-4 py-2 rounded-xl bg-slate-900 border border-slate-700 text-slate-300 font-semibold hover:bg-slate-800 flex items-center gap-1.5"
+                  className="px-4 py-2 rounded-xl bg-white border border-slate-200 text-slate-600 font-semibold hover:bg-slate-100 flex items-center gap-1.5"
                 >
                   <ArrowLeft className="w-3.5 h-3.5" /> Back
                 </button>
@@ -613,7 +611,7 @@ export default function LoginOnboarding({
                 <button
                   type="button"
                   onClick={() => setStep('landing')}
-                  className="px-4 py-2 rounded-xl bg-slate-900 border border-slate-700 text-slate-400 font-semibold hover:bg-slate-800"
+                  className="px-4 py-2 rounded-xl bg-white border border-slate-200 text-slate-400 font-semibold hover:bg-slate-100"
                 >
                   Cancel
                 </button>
@@ -623,7 +621,7 @@ export default function LoginOnboarding({
                 <button
                   type="button"
                   onClick={() => setQuestionSubStep(prev => prev + 1)}
-                  className="px-5 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold hover:brightness-110 flex items-center gap-1.5 shadow-md shadow-amber-500/20"
+                  className="px-5 py-2 rounded-xl btn-primary text-white font-bold hover:brightness-110 flex items-center gap-1.5 shadow-md shadow-primary/20"
                 >
                   Next Step <ArrowRight className="w-3.5 h-3.5" />
                 </button>
@@ -632,7 +630,7 @@ export default function LoginOnboarding({
                   type="button"
                   onClick={handleFinishQuestionnaire}
                   disabled={loadingReport}
-                  className="px-6 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold hover:brightness-110 flex items-center gap-1.5 shadow-lg shadow-emerald-500/20"
+                  className="px-6 py-2 rounded-xl btn-primary text-white font-bold hover:brightness-110 flex items-center gap-1.5 shadow-lg shadow-emerald-500/20"
                 >
                   {loadingReport ? 'Analyzing Gaps...' : 'Generate Diagnostic Report'}
                   <Sparkles className="w-3.5 h-3.5" />
@@ -647,27 +645,27 @@ export default function LoginOnboarding({
         {/* STEP 3: INSTANT AI COMPETENCY DIAGNOSTIC & GAP REPORT    */}
         {/* ======================================================== */}
         {step === 'report' && diagnosticReport && (
-          <div className="glass-card rounded-3xl p-6 sm:p-8 border border-amber-500/40 shadow-2xl space-y-6 animate-fadeIn">
+          <div className="glass-card rounded-3xl p-6 sm:p-8 border border-primary/30 shadow-2xl space-y-6 animate-fadeIn">
             
             {/* Report Header */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-800 gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-200 gap-3">
               <div>
                 <div className="flex items-center space-x-2">
-                  <span className="p-1.5 rounded-lg bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                  <span className="p-1.5 rounded-lg bg-tertiary/15 text-tertiary border border-tertiary/30">
                     <ShieldCheck className="w-4 h-4" />
                   </span>
-                  <h3 className="text-lg font-extrabold text-white">
+                  <h3 className="text-lg font-extrabold text-slate-900">
                     Official Competency & Skill Gap Diagnostic Report
                   </h3>
                 </div>
-                <p className="text-xs text-slate-300 mt-1">
-                  Generated for: <strong className="text-amber-400">{diagnosticReport.employee?.name}</strong> · {diagnosticReport.employee?.designation} ({diagnosticReport.employee?.department})
+                <p className="text-xs text-slate-600 mt-1">
+                  Generated for: <strong className="text-tertiary">{diagnosticReport.employee?.name}</strong> · {diagnosticReport.employee?.designation} ({diagnosticReport.employee?.department})
                 </p>
               </div>
 
               <div className="text-right self-start sm:self-auto">
                 <span className="text-[10px] text-slate-400 font-mono">Role Benchmark Readiness</span>
-                <p className="text-2xl font-extrabold font-mono text-cyan-400">
+                <p className="text-2xl font-extrabold font-mono text-secondary">
                   {diagnosticReport.readiness || diagnosticReport.gaps?.overall_readiness_pct || 78.0}%
                 </p>
               </div>
@@ -677,31 +675,31 @@ export default function LoginOnboarding({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
               
               {/* Left Column: What Their Skills Are (Strengths) */}
-              <div className="p-4 rounded-2xl bg-emerald-950/20 border border-emerald-500/30 space-y-3">
-                <h4 className="font-bold text-emerald-400 flex items-center gap-1.5 text-xs uppercase tracking-wider">
+              <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-500/30 space-y-3">
+                <h4 className="font-bold text-emerald-600 flex items-center gap-1.5 text-xs uppercase tracking-wider">
                   <CheckCircle2 className="w-4 h-4" />
                   Identified Strengths & Core Proficiencies
                 </h4>
                 <div className="space-y-2">
                   {(diagnosticReport.strengths || []).length > 0 ? (
                     diagnosticReport.strengths.map((st, sidx) => (
-                      <div key={sidx} className="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800 flex items-center justify-between">
+                      <div key={sidx} className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
                         <div>
-                          <p className="font-semibold text-slate-200">{st.name}</p>
+                          <p className="font-semibold text-slate-700">{st.name}</p>
                           <span className="text-[10px] text-slate-400">{st.domain}</span>
                         </div>
-                        <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                        <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-700 border border-emerald-500/40">
                           Lvl {st.level} (Mastered)
                         </span>
                       </div>
                     ))
                   ) : (
-                    <div className="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800 flex items-center justify-between">
+                    <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
                       <div>
-                        <p className="font-semibold text-slate-200">SNA 2008 Methodology & GDP Compilation</p>
+                        <p className="font-semibold text-slate-700">SNA 2008 Methodology & GDP Compilation</p>
                         <span className="text-[10px] text-slate-400">National Accounts</span>
                       </div>
-                      <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                      <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-700 border border-emerald-500/40">
                         Lvl 5 (Mastered)
                       </span>
                     </div>
@@ -710,24 +708,24 @@ export default function LoginOnboarding({
               </div>
 
               {/* Right Column: Where They Lag (Categorized Gaps & Deficits) */}
-              <div className="p-4 rounded-2xl bg-rose-950/20 border border-rose-500/30 space-y-3">
-                <h4 className="font-bold text-rose-400 flex items-center gap-1.5 text-xs uppercase tracking-wider">
+              <div className="p-4 rounded-2xl bg-rose-50 border border-rose-500/30 space-y-3">
+                <h4 className="font-bold text-rose-600 flex items-center gap-1.5 text-xs uppercase tracking-wider">
                   <AlertTriangle className="w-4 h-4" />
                   Identified Skill Gaps & Deficits
                 </h4>
                 <div className="space-y-2 max-h-56 overflow-y-auto pr-1">
                   {(diagnosticReport.deficits || diagnosticReport.gaps?.all_gaps || []).filter(g => g.gap > 0 || g.status === 'open').map((gap, gidx) => (
-                    <div key={gidx} className="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800 flex items-center justify-between">
+                    <div key={gidx} className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
                       <div>
-                        <p className="font-semibold text-slate-200">{gap.name || gap.skill_name}</p>
+                        <p className="font-semibold text-slate-700">{gap.name || gap.skill_name}</p>
                         <span className="text-[10px] text-slate-400">
-                          Current: <strong className="text-cyan-400">Lvl {gap.actual ?? gap.actual_level}</strong> · Needed: <strong className="text-amber-400">Lvl {gap.expected ?? gap.expected_level}</strong>
+                          Current: <strong className="text-secondary">Lvl {gap.actual ?? gap.actual_level}</strong> · Needed: <strong className="text-tertiary">Lvl {gap.expected ?? gap.expected_level}</strong>
                         </span>
                       </div>
                       <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${
                         (gap.severity || '').includes('Critical')
-                          ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40'
-                          : 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                          ? 'bg-rose-500/20 text-rose-700 border border-rose-500/40'
+                          : 'bg-tertiary/15 text-tertiary border border-primary/30'
                       }`}>
                         {gap.severity || 'High Deficit'}
                       </span>
@@ -741,8 +739,8 @@ export default function LoginOnboarding({
             {/* Curated Recommendations Directly Below Diagnostic */}
             <div className="space-y-3 pt-2">
               <div className="flex items-center justify-between">
-                <h4 className="font-bold text-sm text-white flex items-center gap-2">
-                  <BookOpen className="w-4 h-4 text-amber-400" />
+                <h4 className="font-bold text-sm text-slate-900 flex items-center gap-2">
+                  <BookOpen className="w-4 h-4 text-tertiary" />
                   Recommended Immediate Learning Interventions (iGOT & NSSTA)
                 </h4>
                 <span className="text-[11px] text-slate-400 font-mono">Matched to Bridge Deficits</span>
@@ -752,24 +750,24 @@ export default function LoginOnboarding({
                 {(diagnosticReport.recommendations || []).slice(0, 3).map((rec, ridx) => (
                   <div 
                     key={ridx}
-                    className="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 flex flex-col justify-between space-y-2"
+                    className="p-3.5 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between space-y-2"
                   >
                     <div>
                       <div className="flex items-center justify-between mb-1">
-                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/40">
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-secondary/15 text-primary border border-secondary/30">
                           {rec.source}
                         </span>
                         <span className="text-[10px] text-slate-400 font-mono">{rec.duration}</span>
                       </div>
-                      <h5 className="font-bold text-xs text-white line-clamp-2">{rec.title}</h5>
+                      <h5 className="font-bold text-xs text-slate-900 line-clamp-2">{rec.title}</h5>
                       <p className="text-[11px] text-slate-400 mt-1 leading-snug line-clamp-2">
                         {rec.reason_text || rec.reason}
                       </p>
                     </div>
 
-                    <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-[11px]">
-                      <span className="text-amber-400 font-medium">{rec.domain}</span>
-                      <span className="text-emerald-400 font-bold">Auto-Enroll Ready</span>
+                    <div className="pt-2 border-t border-slate-200 flex items-center justify-between text-[11px]">
+                      <span className="text-tertiary font-medium">{rec.domain}</span>
+                      <span className="text-emerald-600 font-bold">Auto-Enroll Ready</span>
                     </div>
                   </div>
                 ))}
@@ -777,14 +775,14 @@ export default function LoginOnboarding({
             </div>
 
             {/* Bottom Action: Proceed to Full Dashboard */}
-            <div className="pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
               <span className="text-xs text-slate-400">
                 Diagnostic report saved to official profile database.
               </span>
 
               <button
                 onClick={handleProceedToDashboard}
-                className="w-full sm:w-auto px-7 py-3 rounded-2xl bg-gradient-to-r from-amber-500 via-orange-500 to-indigo-600 text-white font-extrabold text-xs sm:text-sm hover:brightness-110 shadow-xl shadow-amber-500/20 flex items-center justify-center gap-2 transition-all transform hover:scale-[1.02]"
+                className="w-full sm:w-auto px-7 py-3 rounded-2xl btn-primary text-white font-extrabold text-xs sm:text-sm hover:brightness-110 shadow-xl shadow-primary/20 flex items-center justify-center gap-2 transition-all transform hover:scale-[1.02]"
               >
                 <span>Proceed to Official Dashboard & Learning Roadmap</span>
                 <ArrowRight className="w-4 h-4" />
@@ -797,10 +795,10 @@ export default function LoginOnboarding({
       </main>
 
       {/* GovTech Footer */}
-      <footer className="border-t border-slate-800 bg-slate-950 py-4 text-center text-xs text-slate-500">
+      <footer className="border-t border-slate-200 bg-white py-4 text-center text-xs text-slate-500">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p>© 2026 Ministry of Statistics and Programme Implementation (MoSPI), Government of India.</p>
-          <p className="font-mono text-[11px] text-amber-500/80">
+          <p className="font-mono text-[11px] text-tertiary">
             National Statistical Systems Training Academy (NSSTA) & iGOT Karmayogi Integrated
           </p>
         </div>

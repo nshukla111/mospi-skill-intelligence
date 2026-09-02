@@ -90,26 +90,26 @@ export default function QuizCenter({ activeEmployee, onOpenUploadModal, onQuizCo
     <div className="space-y-6 animate-fadeIn pb-12">
       
       {/* Assessment Hero Card */}
-      <div className="glass-card rounded-3xl p-6 border border-cyan-800/40 bg-gradient-to-br from-slate-900 via-slate-950 to-cyan-950/20 shadow-2xl relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="glass-card rounded-3xl p-6 border border-secondary/20 bg-gradient-to-br from-white via-neutral to-secondary/10 shadow-2xl relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
           <div className="flex items-center space-x-3.5">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-cyan-500 via-indigo-600 to-amber-500 p-0.5 shadow-xl flex items-center justify-center">
-              <div className="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center text-cyan-400">
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-primary via-secondary to-tertiary p-0.5 shadow-xl flex items-center justify-center">
+              <div className="w-full h-full bg-white rounded-[14px] flex items-center justify-center text-secondary">
                 <Award className="w-7 h-7" />
               </div>
             </div>
             <div>
               <div className="flex items-center space-x-2">
-                <h2 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+                <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
                   AI Assessment & Competency Verification Center
                 </h2>
-                <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-full bg-secondary/15 text-secondary border border-secondary/30">
                   Instant Profile Refresh
                 </span>
               </div>
-              <p className="text-xs text-slate-300 mt-1">
+              <p className="text-xs text-slate-600 mt-1">
                 Verify knowledge, close active competency gaps, and dynamically upgrade your MoSPI proficiency levels
               </p>
             </div>
@@ -117,7 +117,7 @@ export default function QuizCenter({ activeEmployee, onOpenUploadModal, onQuizCo
 
           <button
             onClick={onOpenUploadModal}
-            className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-cyan-500/20 hover:brightness-110"
+            className="px-4 py-2.5 rounded-xl btn-primary text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-secondary/20 hover:brightness-110"
           >
             <UploadCloud className="w-4 h-4" />
             <span>Generate from Document</span>
@@ -138,8 +138,8 @@ export default function QuizCenter({ activeEmployee, onOpenUploadModal, onQuizCo
       {/* Domain Assessment Grid */}
       <div className="space-y-4">
         <div>
-          <h3 className="font-bold text-base text-white flex items-center gap-2">
-            <Zap className="w-4 h-4 text-cyan-400" />
+          <h3 className="font-bold text-base text-slate-900 flex items-center gap-2">
+            <Zap className="w-4 h-4 text-secondary" />
             Select Statistical Domain Assessment
           </h3>
           <p className="text-xs text-slate-400 mt-0.5">
@@ -151,11 +151,11 @@ export default function QuizCenter({ activeEmployee, onOpenUploadModal, onQuizCo
           {domains.map((dom, idx) => (
             <div
               key={idx}
-              className="glass-card rounded-2xl p-5 border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col justify-between space-y-4 group"
+              className="glass-card rounded-2xl p-5 border border-slate-200 hover:border-secondary/40 transition-all flex flex-col justify-between space-y-4 group"
             >
               <div className="space-y-2.5">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/30">
                     {dom.badge}
                   </span>
                   <span className="text-[11px] text-slate-500 font-mono flex items-center gap-1">
@@ -163,7 +163,7 @@ export default function QuizCenter({ activeEmployee, onOpenUploadModal, onQuizCo
                   </span>
                 </div>
 
-                <h4 className="font-bold text-sm text-white group-hover:text-cyan-300 transition-colors">
+                <h4 className="font-bold text-sm text-slate-900 group-hover:text-secondary transition-colors">
                   {dom.name}
                 </h4>
 
@@ -173,7 +173,7 @@ export default function QuizCenter({ activeEmployee, onOpenUploadModal, onQuizCo
 
                 <div className="pt-2 flex flex-wrap gap-1">
                   {dom.skills.map((sk, sidx) => (
-                    <span key={sidx} className="text-[10px] px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">
+                    <span key={sidx} className="text-[10px] px-2 py-0.5 rounded bg-white text-slate-600 border border-slate-200">
                       • {sk}
                     </span>
                   ))}
@@ -183,7 +183,7 @@ export default function QuizCenter({ activeEmployee, onOpenUploadModal, onQuizCo
               <button
                 onClick={() => handleLaunchDomainQuiz(dom)}
                 disabled={loadingDomain === dom.id}
-                className="w-full py-2.5 px-3 rounded-xl bg-slate-900 hover:bg-cyan-600 text-slate-200 hover:text-white border border-slate-700 hover:border-cyan-500 text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                className="w-full py-2.5 px-3 rounded-xl bg-white hover:bg-primary text-slate-700 hover:text-white border border-slate-200 hover:border-primary text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm"
               >
                 {loadingDomain === dom.id ? 'Generating Quiz...' : 'Start Assessment'}
                 <ArrowRight className="w-3.5 h-3.5" />

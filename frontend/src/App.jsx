@@ -63,7 +63,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[#060d17] text-slate-100 flex flex-col selection:bg-amber-500/30">
+    <div className="min-h-screen bg-neutral text-ink flex flex-col selection:bg-secondary/20">
       
       {/* Official Government Navbar */}
       <Navbar
@@ -144,14 +144,14 @@ export default function App() {
       />
 
       {/* Official GovTech Footer */}
-      <footer className="border-t border-slate-800/80 bg-slate-950 py-6 text-center text-xs text-slate-400">
+      <footer className="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <div className="flex items-center space-x-2 text-slate-400">
-            <span className="font-bold text-amber-400">सांख्यिकी एवं कार्यक्रम कार्यान्वयन मंत्रालय</span>
+          <div className="flex items-center space-x-2 text-slate-500">
+            <span className="font-bold text-primary">सांख्यिकी एवं कार्यक्रम कार्यान्वयन मंत्रालय</span>
             <span>|</span>
             <span>Ministry of Statistics and Programme Implementation</span>
           </div>
-          <p className="font-mono text-[11px] text-amber-500/80">
+          <p className="font-mono text-[11px] text-secondary">
             Smart India Hackathon 2026 · Problem Statement 26101 · National Competency Framework
           </p>
         </div>

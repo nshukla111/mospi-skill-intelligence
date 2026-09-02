@@ -96,37 +96,37 @@ export default function EmployeeDashboard({
       
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed top-20 right-5 z-50 bg-emerald-950 border border-emerald-500 text-emerald-200 px-4 py-3 rounded-2xl shadow-2xl flex items-center space-x-2 text-xs font-semibold animate-slideDown">
-          <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+        <div className="fixed top-20 right-5 z-50 bg-emerald-50 border border-emerald-500 text-emerald-800 px-4 py-3 rounded-2xl shadow-2xl flex items-center space-x-2 text-xs font-semibold animate-slideDown">
+          <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
           <span>{toastMessage}</span>
         </div>
       )}
 
       {/* Official Header Card */}
-      <div className="glass-card rounded-3xl p-6 border border-slate-800 shadow-2xl relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="glass-card rounded-3xl p-6 border border-slate-200 shadow-2xl relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
           
           {/* Officer Details */}
           <div className="flex items-start sm:items-center space-x-4">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-cyan-500 via-indigo-600 to-amber-500 p-0.5 shadow-xl flex items-center justify-center shrink-0">
-              <div className="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center text-cyan-300 font-bold text-xl">
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-primary via-secondary to-tertiary p-0.5 shadow-xl flex items-center justify-center shrink-0">
+              <div className="w-full h-full bg-white rounded-[14px] flex items-center justify-center text-secondary font-bold text-xl">
                 {activeEmployee?.name?.split(' ')[0]?.[0] || 'O'}
               </div>
             </div>
 
             <div>
               <div className="flex flex-wrap items-center gap-2">
-                <h2 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+                <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
                   {activeEmployee?.name}
                 </h2>
-                <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/30">
                   {activeEmployee?.cadre}
                 </span>
               </div>
-              <p className="text-xs text-slate-300 mt-1 flex flex-wrap items-center gap-2">
-                <strong className="text-cyan-400 font-semibold">{activeEmployee?.designation}</strong>
+              <p className="text-xs text-slate-600 mt-1 flex flex-wrap items-center gap-2">
+                <strong className="text-secondary font-semibold">{activeEmployee?.designation}</strong>
                 <span>·</span>
                 <span>{activeEmployee?.department}</span>
                 <span>·</span>
@@ -139,15 +139,15 @@ export default function EmployeeDashboard({
           <div className="flex flex-wrap items-center gap-2.5">
             <button
               onClick={onOpenUploadModal}
-              className="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-all shadow-sm"
+              className="px-3.5 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-xs font-semibold flex items-center gap-1.5 transition-all shadow-sm"
             >
-              <UploadCloud className="w-4 h-4 text-cyan-400" />
+              <UploadCloud className="w-4 h-4 text-secondary" />
               <span>Upload Document Quiz</span>
             </button>
 
             <button
               onClick={() => onNavigateTab && onNavigateTab('quizzes')}
-              className="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:brightness-110 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-lg shadow-cyan-500/20"
+              className="px-4 py-2 rounded-xl btn-primary hover:brightness-110 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-lg shadow-secondary/20"
             >
               <Zap className="w-4 h-4" />
               <span>Take Quick Assessment</span>
@@ -156,68 +156,68 @@ export default function EmployeeDashboard({
             <button
               onClick={loadDashboardData}
               title="Refresh AI Gap Analysis"
-              className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+              className="p-2 rounded-xl bg-white border border-slate-200 text-slate-400 hover:text-primary hover:bg-slate-100 transition-colors"
             >
-              <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin text-cyan-400' : ''}`} />
+              <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin text-secondary' : ''}`} />
             </button>
           </div>
 
         </div>
 
         {/* 4 Stat KPI Chips */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 mt-6 pt-6 border-t border-slate-800/80">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 mt-6 pt-6 border-t border-slate-200">
           
-          <div className="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800">
+          <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
             <div className="flex items-center justify-between">
               <span className="text-[11px] text-slate-400 font-medium">Cadre Readiness</span>
-              <Award className="w-4 h-4 text-cyan-400" />
+              <Award className="w-4 h-4 text-secondary" />
             </div>
             <div className="flex items-baseline space-x-2 mt-1.5">
-              <span className="text-2xl font-extrabold text-cyan-300 font-mono">
+              <span className="text-2xl font-extrabold text-secondary font-mono">
                 {gapsData?.overall_readiness_pct || 80.0}%
               </span>
-              <span className="text-[10px] text-emerald-400 font-semibold">Optimal</span>
+              <span className="text-[10px] text-emerald-600 font-semibold">Optimal</span>
             </div>
           </div>
 
-          <div className="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800">
+          <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
             <div className="flex items-center justify-between">
               <span className="text-[11px] text-slate-400 font-medium">Open Competency Gaps</span>
-              <AlertTriangle className="w-4 h-4 text-amber-400" />
+              <AlertTriangle className="w-4 h-4 text-tertiary" />
             </div>
             <div className="flex items-baseline space-x-2 mt-1.5">
-              <span className="text-2xl font-extrabold text-amber-300 font-mono">
+              <span className="text-2xl font-extrabold text-tertiary font-mono">
                 {gapsData?.total_gaps_count ?? 3}
               </span>
-              <span className="text-[10px] text-rose-400 font-semibold">
+              <span className="text-[10px] text-rose-600 font-semibold">
                 {gapsData?.critical_gaps_count || 1} Critical
               </span>
             </div>
           </div>
 
-          <div className="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800">
+          <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
             <div className="flex items-center justify-between">
               <span className="text-[11px] text-slate-400 font-medium">Ranked Courses Matched</span>
-              <BookOpen className="w-4 h-4 text-indigo-400" />
+              <BookOpen className="w-4 h-4 text-primary" />
             </div>
             <div className="flex items-baseline space-x-2 mt-1.5">
-              <span className="text-2xl font-extrabold text-indigo-300 font-mono">
+              <span className="text-2xl font-extrabold text-primary font-mono">
                 {recommendations?.length || 4}
               </span>
-              <span className="text-[10px] text-indigo-400 font-semibold">iGOT + TPAC</span>
+              <span className="text-[10px] text-primary font-semibold">iGOT + TPAC</span>
             </div>
           </div>
 
-          <div className="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800">
+          <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
             <div className="flex items-center justify-between">
               <span className="text-[11px] text-slate-400 font-medium">In-Service Credentials</span>
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+              <ShieldCheck className="w-4 h-4 text-emerald-600" />
             </div>
             <div className="flex items-baseline space-x-2 mt-1.5">
-              <span className="text-2xl font-extrabold text-emerald-300 font-mono">
+              <span className="text-2xl font-extrabold text-emerald-700 font-mono">
                 {activeEmployee?.past_trainings?.length || 3}
               </span>
-              <span className="text-[10px] text-emerald-400 font-semibold">NSSTA Certified</span>
+              <span className="text-[10px] text-emerald-600 font-semibold">NSSTA Certified</span>
             </div>
           </div>
 
@@ -250,10 +250,10 @@ export default function EmployeeDashboard({
       </div>
 
       {/* Activity Timeline */}
-      <div className="glass-card rounded-2xl p-6 border border-slate-800 shadow-xl space-y-4">
-        <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-          <h3 className="font-bold text-sm text-white flex items-center gap-2">
-            <Clock className="w-4 h-4 text-cyan-400" />
+      <div className="glass-card rounded-2xl p-6 border border-slate-200 shadow-xl space-y-4">
+        <div className="flex items-center justify-between pb-3 border-b border-slate-200">
+          <h3 className="font-bold text-sm text-slate-900 flex items-center gap-2">
+            <Clock className="w-4 h-4 text-secondary" />
             Recent Competency Verification & Activity Log
           </h3>
           <span className="text-xs text-slate-500 font-mono">Real-time Data Layer</span>
@@ -261,11 +261,11 @@ export default function EmployeeDashboard({
 
         <div className="space-y-3">
           {progressLogs.map((log, lidx) => (
-            <div key={lidx} className="flex items-start space-x-3 text-xs bg-slate-900/50 p-3 rounded-xl border border-slate-800">
-              <div className="w-2 h-2 rounded-full bg-cyan-400 mt-1.5 shrink-0"></div>
+            <div key={lidx} className="flex items-start space-x-3 text-xs bg-slate-50 p-3 rounded-xl border border-slate-200">
+              <div className="w-2 h-2 rounded-full bg-secondary mt-1.5 shrink-0"></div>
               <div className="flex-1">
                 <div className="flex items-center justify-between">
-                  <span className="font-semibold text-slate-200">{log.title}</span>
+                  <span className="font-semibold text-slate-700">{log.title}</span>
                   <span className="text-[10px] text-slate-500 font-mono">{log.timestamp}</span>
                 </div>
                 <p className="text-[11px] text-slate-400 mt-0.5">{log.description}</p>
