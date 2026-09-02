@@ -1,0 +1,85 @@
+[
+  {
+    "id": 201,
+    "title": "NSSTA Executive Residential: Advanced National Accounting & Quarterly GVA",
+    "source": "NSSTA / TPAC",
+    "domain": "National Accounts",
+    "skills_covered": [
+      1,
+      2,
+      7
+    ],
+    "target_level": "Level 4-5 Officers",
+    "duration": "2 Weeks (Residential at Greater Noida)",
+    "mode": "In-Person / Lab Workshops",
+    "intake_capacity": 25,
+    "next_cohort": "15 Oct 2026",
+    "description": "Intensive in-person residency covering double deflation, institutional sector accounts, informal sector GVA modeling, and live SUT table compilation."
+  },
+  {
+    "id": 202,
+    "title": "NSSTA Hands-On Bootcamp: AI, NLP & Satellite Analytics for Official Surveys",
+    "source": "NSSTA / TPAC",
+    "domain": "Data Science & AI",
+    "skills_covered": [
+      7,
+      8
+    ],
+    "target_level": "All Cadres (ISS & SSS)",
+    "duration": "5 Days (Hybrid)",
+    "mode": "Hybrid (3 Days Virtual + 2 Days Lab)",
+    "intake_capacity": 40,
+    "next_cohort": "02 Nov 2026",
+    "description": "High-impact lab working directly with High-Performance Computing (HPC) nodes on geospatial data processing, automated OCR for economic census, and ML imputation."
+  },
+  {
+    "id": 203,
+    "title": "TPAC Field Leadership: CAPI Workflow Engineering & Real-Time Data Auditing",
+    "source": "NSSTA / TPAC",
+    "domain": "Survey Methodology",
+    "skills_covered": [
+      5,
+      6,
+      9
+    ],
+    "target_level": "Field Supervisory Officers (SSO/JSO/Directors)",
+    "duration": "1 Week (Zonal Training Centers)",
+    "mode": "In-Person Field Simulation",
+    "intake_capacity": 35,
+    "next_cohort": "20 Nov 2026",
+    "description": "Practical drill on CAPI validation scripts, GPS geofencing verification, supervisor dashboard telemetry, and field error resolution protocols."
+  },
+  {
+    "id": 204,
+    "title": "NSSTA-UNESCAP Workshop: Price Index Base Year Revision & Hedonic Quality Adjustment",
+    "source": "NSSTA / TPAC",
+    "domain": "Price Statistics",
+    "skills_covered": [
+      3,
+      4
+    ],
+    "target_level": "CPD & ESD Statistical Officers",
+    "duration": "4 Days (Residential)",
+    "mode": "In-Person",
+    "intake_capacity": 30,
+    "next_cohort": "08 Dec 2026",
+    "description": "International best practices with UNESCAP experts on scanner data ingestion, hedonic pricing for electronics/housing, and e-commerce price indices."
+  },
+  {
+    "id": 205,
+    "title": "TPAC Masterclass: Multidimensional Inequality & Sub-National SDG Localization",
+    "source": "NSSTA / TPAC",
+    "domain": "SDGs & Indicators",
+    "skills_covered": [
+      11,
+      12,
+      7
+    ],
+    "target_level": "Social Statistics & State DES Officers",
+    "duration": "3 Days (Virtual Interactive)",
+    "mode": "Online Live Workshop",
+    "intake_capacity": 50,
+    "next_cohort": "18 Dec 2026",
+    "description": "Advanced workshop on Alkire-Foster MPI methodology, disaggregated gender statistics, and building state-level SDG monitoring dashboards."
+  }
+]

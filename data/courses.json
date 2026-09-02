@@ -1,0 +1,97 @@
+[
+  {
+    "id": 101,
+    "title": "Advanced SNA 2008 & Supply-Use Tables Compilation",
+    "source": "iGOT Karmayogi",
+    "domain": "National Accounts",
+    "skills_covered": [
+      1,
+      2
+    ],
+    "level": "Advanced",
+    "duration": "18 Hours (Self-paced)",
+    "badge": "Certified National Accountant",
+    "description": "Comprehensive masterclass on SUT balancing, sequence of accounts, GFCF estimation, and FISIM allocation per UN SNA 2008."
+  },
+  {
+    "id": 102,
+    "title": "Python & R Data Analytics for Official Statistics",
+    "source": "iGOT Karmayogi",
+    "domain": "Data Science & AI",
+    "skills_covered": [
+      7
+    ],
+    "level": "Intermediate",
+    "duration": "24 Hours (Self-paced)",
+    "badge": "Statistical Programmer",
+    "description": "Hands-on training using pandas, numpy, and R tidyverse for automated data validation, tabular reports, and outlier detection."
+  },
+  {
+    "id": 103,
+    "title": "Applied Machine Learning & Big Data in Governance",
+    "source": "iGOT Karmayogi",
+    "domain": "Data Science & AI",
+    "skills_covered": [
+      8
+    ],
+    "level": "Advanced",
+    "duration": "30 Hours (Self-paced)",
+    "badge": "AI in Official Stats Specialist",
+    "description": "Building predictive time-series models (ARIMA, XGBoost), geospatial satellite image analysis for crop yield, and GST data integration."
+  },
+  {
+    "id": 104,
+    "title": "Consumer Price Index (CPI) Revision & Basket Methodology",
+    "source": "iGOT Karmayogi",
+    "domain": "Price Statistics",
+    "skills_covered": [
+      3
+    ],
+    "level": "Intermediate",
+    "duration": "12 Hours (Self-paced)",
+    "badge": "Price Index Specialist",
+    "description": "Price index mathematics, elementary aggregate formulas, online data scraping, and outlet sampling."
+  },
+  {
+    "id": 105,
+    "title": "National Quality Assurance Framework (NQAF) Implementation",
+    "source": "iGOT Karmayogi",
+    "domain": "Governance & Quality",
+    "skills_covered": [
+      9,
+      10
+    ],
+    "level": "Beginner to Intermediate",
+    "duration": "10 Hours (Self-paced)",
+    "badge": "NQAF Quality Assessor",
+    "description": "Standard operating procedures for official data quality audits, SDMX metadata registries, and CSA 2008 legal provisions."
+  },
+  {
+    "id": 106,
+    "title": "SDG National Indicator Framework (NIF) & Dashboarding",
+    "source": "iGOT Karmayogi",
+    "domain": "SDGs & Indicators",
+    "skills_covered": [
+      11,
+      12
+    ],
+    "level": "Intermediate",
+    "duration": "14 Hours (Self-paced)",
+    "badge": "SDG Metric Lead",
+    "description": "UN SDG Goal-to-Indicator alignment, localization methodologies, multi-dimensional inequality tracking, and State ranking indexes."
+  },
+  {
+    "id": 107,
+    "title": "Modern Sample Survey Design & Weight Calibration",
+    "source": "iGOT Karmayogi",
+    "domain": "Survey Methodology",
+    "skills_covered": [
+      5,
+      6
+    ],
+    "level": "Intermediate",
+    "duration": "16 Hours (Self-paced)",
+    "badge": "Survey Methodologist",
+    "description": "Sampling frames, rotation schemes for periodic labour force surveys, multiplier calculation, and variance estimation."
+  }
+]

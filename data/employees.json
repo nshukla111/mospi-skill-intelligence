@@ -1,0 +1,207 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Rajesh Sharma, ISS",
+    "designation": "Director",
+    "department": "National Accounts Division (NAD)",
+    "cadre": "Indian Statistical Service (2012 Batch)",
+    "qualifications": "Ph.D. in Econometrics (Delhi School of Economics), M.Sc. Statistics",
+    "experience_years": 14,
+    "email": "rajesh.sharma.iss@nic.in",
+    "location": "Sardar Patel Bhawan, New Delhi",
+    "past_trainings": [
+      {
+        "title": "Macroeconomic Accounting at IMF-STI Singapore (2018)",
+        "year": 2018
+      },
+      {
+        "title": "SNA Basic Induction at NSSTA (2012)",
+        "year": 2012
+      },
+      {
+        "title": "Governance & CSA 2008 Compliance (2021)",
+        "year": 2021
+      }
+    ],
+    "skills": [
+      {
+        "skill_id": 1,
+        "proficiency_level": 5,
+        "source": "self-report"
+      },
+      {
+        "skill_id": 2,
+        "proficiency_level": 4,
+        "source": "self-report"
+      },
+      {
+        "skill_id": 7,
+        "proficiency_level": 2,
+        "source": "quiz"
+      },
+      {
+        "skill_id": 8,
+        "proficiency_level": 1,
+        "source": "inferred"
+      },
+      {
+        "skill_id": 9,
+        "proficiency_level": 4,
+        "source": "self-report"
+      },
+      {
+        "skill_id": 10,
+        "proficiency_level": 4,
+        "source": "self-report"
+      }
+    ],
+    "created_at": "2026-01-15T09:00:00Z"
+  },
+  {
+    "id": 2,
+    "name": "Ananya Sen, SSS",
+    "designation": "Senior Statistical Officer (SSO)",
+    "department": "Field Operations Division (FOD)",
+    "cadre": "Subordinate Statistical Service",
+    "qualifications": "M.Sc. Applied Statistics (ISI Kolkata)",
+    "experience_years": 8,
+    "email": "ananya.sen.sss@nic.in",
+    "location": "FOD Regional Office, Kolkata",
+    "past_trainings": [
+      {
+        "title": "NSS 79th Round Survey Orientation (2022)",
+        "year": 2022
+      },
+      {
+        "title": "CAPI Tablet Operations & Security (2020)",
+        "year": 2020
+      }
+    ],
+    "skills": [
+      {
+        "skill_id": 5,
+        "proficiency_level": 4,
+        "source": "quiz"
+      },
+      {
+        "skill_id": 6,
+        "proficiency_level": 4,
+        "source": "self-report"
+      },
+      {
+        "skill_id": 7,
+        "proficiency_level": 1,
+        "source": "self-report"
+      },
+      {
+        "skill_id": 9,
+        "proficiency_level": 3,
+        "source": "inferred"
+      },
+      {
+        "skill_id": 10,
+        "proficiency_level": 3,
+        "source": "self-report"
+      }
+    ],
+    "created_at": "2026-02-10T10:30:00Z"
+  },
+  {
+    "id": 3,
+    "name": "Vikram Malhotra, ISS",
+    "designation": "Joint Director",
+    "department": "Central Price Division (CPD)",
+    "cadre": "Indian Statistical Service (2016 Batch)",
+    "qualifications": "M.Stat (Indian Statistical Institute), B.Sc. Mathematics",
+    "experience_years": 10,
+    "email": "vikram.m.iss@nic.in",
+    "location": "Jeevan Prakash Building, New Delhi",
+    "past_trainings": [
+      {
+        "title": "Price Index Formulation & CPI Revision (2019)",
+        "year": 2019
+      },
+      {
+        "title": "Advanced R for Official Statistics (2023)",
+        "year": 2023
+      }
+    ],
+    "skills": [
+      {
+        "skill_id": 3,
+        "proficiency_level": 5,
+        "source": "self-report"
+      },
+      {
+        "skill_id": 4,
+        "proficiency_level": 4,
+        "source": "quiz"
+      },
+      {
+        "skill_id": 7,
+        "proficiency_level": 4,
+        "source": "quiz"
+      },
+      {
+        "skill_id": 8,
+        "proficiency_level": 2,
+        "source": "self-report"
+      },
+      {
+        "skill_id": 9,
+        "proficiency_level": 3,
+        "source": "self-report"
+      }
+    ],
+    "created_at": "2026-03-01T11:15:00Z"
+  },
+  {
+    "id": 4,
+    "name": "Priya Patel, ISS",
+    "designation": "Assistant Director / Data Analyst",
+    "department": "Economic Statistics Division (ESD)",
+    "cadre": "Indian Statistical Service (2021 Batch)",
+    "qualifications": "M.Tech Data Analytics, B.Tech Computer Science",
+    "experience_years": 5,
+    "email": "priya.patel.iss@nic.in",
+    "location": "Khurshid Lal Bhawan, New Delhi",
+    "past_trainings": [
+      {
+        "title": "Big Data Analytics in Government (2023)",
+        "year": 2023
+      },
+      {
+        "title": "Official Statistics & IIP Compilation (2022)",
+        "year": 2022
+      }
+    ],
+    "skills": [
+      {
+        "skill_id": 4,
+        "proficiency_level": 3,
+        "source": "quiz"
+      },
+      {
+        "skill_id": 7,
+        "proficiency_level": 5,
+        "source": "quiz"
+      },
+      {
+        "skill_id": 8,
+        "proficiency_level": 4,
+        "source": "quiz"
+      },
+      {
+        "skill_id": 9,
+        "proficiency_level": 2,
+        "source": "self-report"
+      },
+      {
+        "skill_id": 11,
+        "proficiency_level": 3,
+        "source": "self-report"
+      }
+    ],
+    "created_at": "2026-03-12T14:20:00Z"
+  }
+]

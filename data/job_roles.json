@@ -1,0 +1,172 @@
+[
+  {
+    "id": 1,
+    "designation": "Director",
+    "department": "National Accounts Division (NAD)",
+    "cadre": "Indian Statistical Service (JAG/SAG)",
+    "expected_skills": [
+      {
+        "skill_id": 1,
+        "expected_level": 5,
+        "priority": "Critical"
+      },
+      {
+        "skill_id": 2,
+        "expected_level": 5,
+        "priority": "Critical"
+      },
+      {
+        "skill_id": 7,
+        "expected_level": 4,
+        "priority": "High"
+      },
+      {
+        "skill_id": 8,
+        "expected_level": 3,
+        "priority": "Medium"
+      },
+      {
+        "skill_id": 9,
+        "expected_level": 4,
+        "priority": "High"
+      },
+      {
+        "skill_id": 10,
+        "expected_level": 4,
+        "priority": "High"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "designation": "Senior Statistical Officer (SSO)",
+    "department": "Field Operations Division (FOD)",
+    "cadre": "Subordinate Statistical Service (SSS)",
+    "expected_skills": [
+      {
+        "skill_id": 5,
+        "expected_level": 5,
+        "priority": "Critical"
+      },
+      {
+        "skill_id": 6,
+        "expected_level": 5,
+        "priority": "Critical"
+      },
+      {
+        "skill_id": 7,
+        "expected_level": 3,
+        "priority": "High"
+      },
+      {
+        "skill_id": 9,
+        "expected_level": 4,
+        "priority": "High"
+      },
+      {
+        "skill_id": 10,
+        "expected_level": 4,
+        "priority": "High"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "designation": "Joint Director",
+    "department": "Central Price Division (CPD)",
+    "cadre": "Indian Statistical Service (JAG)",
+    "expected_skills": [
+      {
+        "skill_id": 3,
+        "expected_level": 5,
+        "priority": "Critical"
+      },
+      {
+        "skill_id": 4,
+        "expected_level": 5,
+        "priority": "Critical"
+      },
+      {
+        "skill_id": 7,
+        "expected_level": 4,
+        "priority": "High"
+      },
+      {
+        "skill_id": 8,
+        "expected_level": 4,
+        "priority": "High"
+      },
+      {
+        "skill_id": 9,
+        "expected_level": 4,
+        "priority": "Medium"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "designation": "Assistant Director / Data Analyst",
+    "department": "Economic Statistics Division (ESD)",
+    "cadre": "Indian Statistical Service (JTS)",
+    "expected_skills": [
+      {
+        "skill_id": 4,
+        "expected_level": 4,
+        "priority": "High"
+      },
+      {
+        "skill_id": 7,
+        "expected_level": 5,
+        "priority": "Critical"
+      },
+      {
+        "skill_id": 8,
+        "expected_level": 5,
+        "priority": "Critical"
+      },
+      {
+        "skill_id": 9,
+        "expected_level": 3,
+        "priority": "Medium"
+      },
+      {
+        "skill_id": 11,
+        "expected_level": 4,
+        "priority": "High"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "designation": "Deputy Director",
+    "department": "Social Statistics Division (SSD)",
+    "cadre": "Indian Statistical Service (STS)",
+    "expected_skills": [
+      {
+        "skill_id": 11,
+        "expected_level": 5,
+        "priority": "Critical"
+      },
+      {
+        "skill_id": 12,
+        "expected_level": 5,
+        "priority": "Critical"
+      },
+      {
+        "skill_id": 5,
+        "expected_level": 4,
+        "priority": "High"
+      },
+      {
+        "skill_id": 7,
+        "expected_level": 4,
+        "priority": "High"
+      },
+      {
+        "skill_id": 9,
+        "expected_level": 4,
+        "priority": "Medium"
+      }
+    ]
+  }
+]

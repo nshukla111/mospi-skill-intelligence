@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "domain": "National Accounts",
+    "skill_name": "SNA 2008 Methodology & GDP Compilation",
+    "description": "Formulation of Gross Domestic Product, Gross Value Added (GVA), Supply-Use Tables (SUT), and Sequence of Accounts following System of National Accounts 2008 standards."
+  },
+  {
+    "id": 2,
+    "domain": "National Accounts",
+    "skill_name": "Quarterly & Annual GVA Estimation",
+    "description": "Techniques for compiling quarterly national accounts, benchmark-indicator interpolation, and volume/price deflation methodologies."
+  },
+  {
+    "id": 3,
+    "domain": "Price Statistics",
+    "skill_name": "Consumer Price Index (CPI) Formulation",
+    "description": "Item basket weighting, Laspeyres/Geometric Mean index computation, rural/urban aggregation, and chain-linking procedures."
+  },
+  {
+    "id": 4,
+    "domain": "Price Statistics",
+    "skill_name": "Index of Industrial Production (IIP)",
+    "description": "Monthly compilation of industrial output metrics, weighting diagrams, seasonal adjustment, and manufacturing sector tracking."
+  },
+  {
+    "id": 5,
+    "domain": "Survey Methodology",
+    "skill_name": "Large-Scale Sample Survey Design (PLFS/NSS)",
+    "description": "Multi-stage stratified sampling design, first-stage units (FSU) selection, listing schedule design, and non-sampling error control."
+  },
+  {
+    "id": 6,
+    "domain": "Survey Methodology",
+    "skill_name": "CAPI Field Operations & Quality Auditing",
+    "description": "Computer Assisted Personal Interviewing (CAPI) workflow deployment, real-time field validation rules, and enumerator monitoring."
+  },
+  {
+    "id": 7,
+    "domain": "Data Science & AI",
+    "skill_name": "Python & R for Official Statistics",
+    "description": "Data wrangling, automated tabular compilation, statistical imputation, and reproducible analytics using pandas, numpy, and tidyverse."
+  },
+  {
+    "id": 8,
+    "domain": "Data Science & AI",
+    "skill_name": "Machine Learning & Big Data Analytics",
+    "description": "Application of machine learning algorithms for administrative data linkage, satellite data estimation, and predictive time-series forecasting."
+  },
+  {
+    "id": 9,
+    "domain": "Governance & Quality",
+    "skill_name": "National Quality Assurance Framework (NQAF)",
+    "description": "MoSPI data quality principles, metadata standards (SDMX), audit guidelines, and official statistics code of practice."
+  },
+  {
+    "id": 10,
+    "domain": "Governance & Quality",
+    "skill_name": "Official Statistics Acts & Legal Compliance",
+    "description": "Collection of Statistics Act (CSA) 2008 rules, data confidentiality safeguards, and inter-ministerial data governance protocols."
+  },
+  {
+    "id": 11,
+    "domain": "SDGs & Indicators",
+    "skill_name": "National Indicator Framework (NIF) Monitoring",
+    "description": "Alignment of UN Sustainable Development Goals with MoSPI NIF, metadata calculation, baseline tracking, and state-level dashboarding."
+  },
+  {
+    "id": 12,
+    "domain": "SDGs & Indicators",
+    "skill_name": "Disaggregated Data Analysis & Inequality Metrics",
+    "description": "Sub-national disaggregation, gender statistics, Gini coefficient computation, and multidimensional poverty index calculations."
+  }
+]
